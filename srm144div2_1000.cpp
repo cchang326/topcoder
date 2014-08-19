@@ -10,6 +10,9 @@ struct _Junction {
 	vector <Junction> children;
 };
 
+// NOTE: This is a long/unnecessary solution. Every path will be traveled twice except the longest path.
+// Use recursive to find the longest path, then subtract that from 2 * all ductLengths.
+
 class PowerOutage
 {
 public:
@@ -26,7 +29,6 @@ private:
 	void estimateRecursive(Junction *pRoot, int *bcost, int *tcost)
 	{
 		*bcost = 0;
-		*tcost = 0;
 		int maxBacktrackCost = 0;
 		// find the children with most backtrack cost and traverse it.
 		for (int i = 0; i < pRoot->children.size(); i++) {
@@ -90,21 +92,18 @@ private:
 	Junction m_root;
 };
 
-void main()
-{
-	/*{0,0,0,1,4,4,6,7,7,7,20}
-{1,3,4,2,5,6,7,20,9,10,31}
-{10,10,100,10,5,1,1,100,1,1,5}*/
-	static const int from[] = {0,0,0,1,4,4,6,7,7,7,20};
-	static const int to[] = {1,3,4,2,5,6,7,20,9,10,31};
-	static const int length[] = {10,10,100,10,5,1,1,100,1,1,5};
-	vector<int> fromJunction(from, from + sizeof(from) / sizeof(from[0]) );
-	vector<int> toJunction(to, to + sizeof(to) / sizeof(to[0]) );
-	vector<int> ductLength(length, length + sizeof(length) / sizeof(length[0]) );
-
-	PowerOutage po;
-	int cost = po.estimateTimeOut(fromJunction, toJunction, ductLength);
-
-	printf("%d", cost); // 281
-	
-}
+//void main()
+//{
+//	static const int from[] = {0,0,0,1,4,4,6,7,7,7,20};
+//	static const int to[] = {1,3,4,2,5,6,7,20,9,10,31};
+//	static const int length[] = {10,10,100,10,5,1,1,100,1,1,5};
+//	vector<int> fromJunction(from, from + sizeof(from) / sizeof(from[0]) );
+//	vector<int> toJunction(to, to + sizeof(to) / sizeof(to[0]) );
+//	vector<int> ductLength(length, length + sizeof(length) / sizeof(length[0]) );
+//
+//	PowerOutage po;
+//	int cost = po.estimateTimeOut(fromJunction, toJunction, ductLength);
+//
+//	printf("%d", cost); // 281
+//	
+//}
