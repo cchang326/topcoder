@@ -27,5 +27,8 @@
     <ClCompile Include="srm144Div1_500.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="srm145div1_1000.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

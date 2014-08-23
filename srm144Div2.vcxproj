@@ -68,6 +68,7 @@
     <ClCompile Include="srm144div2_1000.cpp" />
     <ClCompile Include="srm144Div1_500.cpp" />
     <ClCompile Include="srm144div2_550.cpp" />
+    <ClCompile Include="srm145div1_1000.cpp" />
     <ClCompile Include="srm145Div2_1000.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

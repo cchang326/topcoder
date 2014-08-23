@@ -56,8 +56,8 @@ private:
 	string P;
 };
 
-void main()
-{
-	BinaryCode bc;
-	vector<string> str = bc.decode("123210122");
-}
+//void main()
+//{
+//	BinaryCode bc;
+//	vector<string> str = bc.decode("123210122");
+//}
